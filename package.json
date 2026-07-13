@@ -1,0 +1,23 @@
+{
+  "name": "cucumber-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright + Cucumber BDD Automation Framework (TypeScript)",
+  "scripts": {
+    "test": "npx cucumber-js -p default --exit",
+    "test:smoke": "npx cucumber-js -p default --tags @smoke --exit",
+    "test:regression": "npx cucumber-js -p default --tags @regression --exit",
+    "test:headless": "cross-env HEADLESS=true npx cucumber-js -p default --exit",
+    "test:headed": "cross-env HEADLESS=false npx cucumber-js -p default --exit"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^20.12.7",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {}
+}
