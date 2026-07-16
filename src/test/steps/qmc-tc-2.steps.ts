@@ -1,19 +1,8 @@
-import { Given, When, Then } from '@cucumber/cucumber';
+import { When, Then } from '@cucumber/cucumber';
 import { pageFixture } from '../../hooks/pageFixture';
-import { LoginPage } from '../pages/LoginPage';
 import { SprintListPage } from '../pages/SprintListPage';
 
-const getLoginPage = () => new LoginPage(pageFixture.page);
 const getSprintListPage = () => new SprintListPage(pageFixture.page);
-
-Given('the user is authenticated and on the Sprint List page', async function () {
-  await getLoginPage().goto();
-  await getLoginPage().loginWithEnvCredentials();
-  await getLoginPage().selectClient('TEST');
-
-  await getSprintListPage().goto();
-  await getSprintListPage().ensureOnSprintListPage();
-});
 
 When('the user selects a Sprint that contains existing User Stories', async function () {
   await getSprintListPage().openSprintSwitcher();
